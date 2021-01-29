@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2021 Samsung Electronics Co., Ltd All Rights Reserved
+* Copyright (c) 2020 Samsung Electronics Co., Ltd All Rights Reserved
 *
 * Licensed under the Apache License, Version 2.0 (the License);
 * you may not use this file except in compliance with the License.
@@ -20,15 +20,27 @@ using NativeApi = Interop.Inspections;
 namespace Tizen.Inspections
 {
     /// <summary>
-    /// EventReceivedEventArgs is an extended EventArgs class.
-    /// This class contains event arguments for the EventReceived event from the Inspection class.
+    /// DataRequestReceivedEventArgs is an extended EventArgs class.
+    /// This class contains event arguments for the DataRequestReceived event from the Inspection class.
     /// </summary>
-    public class EventReceivedEventArgs : EventArgs
+    public class DataRequestReceivedEventArgs : EventArgs
     {
-        internal EventReceivedEventArgs(InspectionContext ctx)
+        internal DataRequestReceivedEventArgs(InspectionData data, string[] parameters, InspectionContext ctx)
         {
+            Data = data;
+            Parameters = parameters;
             Context = ctx;
         }
+
+        /// <summary>
+        /// The instance of InspectionData.
+        /// </summary>
+        public InspectionData Data { get; internal set; }
+
+        /// <summary>
+        /// An array of data request parameters.
+        /// </summary>
+        public string[] Parameters { get; internal set; }
 
         /// <summary>
         /// The instance of InspectionContext.

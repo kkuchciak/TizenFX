@@ -18,6 +18,6 @@ internal static partial class Interop
 {
     internal static partial class Libraries
     {
-        public const string Diagnostics = "libdiagnostics.so.1.0.0";
+        public const string Diagnostics = "libdiagnostics.so.1.2.0";
     }
 }
